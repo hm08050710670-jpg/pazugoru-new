@@ -711,9 +711,9 @@ async function enemyShot(epoch){
   const COURSE_START={1:'s1-korafu',2:'c2-sunamogu'};
   const COURSE_BOSS=new Set(['boss-koshigaya','c2-abiko']);
   function courseOf(id){return String(id||'').startsWith('c2-')?2:1}
-  function unlockedCourse(){return Math.max(1,Number(localStorage.getItem('pazugoru-unlocked-course')||1))}
+  function unlockedCourse(){const v=Number(localStorage.getItem('pazugoru-unlocked-course')||1);return Number.isFinite(v)?Math.max(1,Math.min(2,v)):1}
   function markCourseClear(n){localStorage.setItem('pazugoru-course-'+n+'-clear','1');localStorage.setItem('pazugoru-unlocked-course',String(Math.max(unlockedCourse(),n+1)));updateStageMap()}
-  function updateStageMap(){const u=unlockedCourse();for(const n of [1,2]){const b=document.querySelector(`[data-course="${n}"]`);if(!b)continue;b.disabled=n>u;b.classList.toggle('locked',n>u)}}
+  function updateStageMap(){const u=unlockedCourse();const b1=document.querySelector('.map-hit-1'),b2=document.querySelector('.map-hit-2');if(b1){b1.disabled=false;b1.classList.remove('locked')}if(b2){b2.disabled=u<2;b2.classList.toggle('locked',u<2)}}
   function showStageMap(){const m=document.getElementById('stageMap');if(!m)return;m.hidden=false;updateStageMap();Audio.stopEffects()}
   function hideStageMap(){const m=document.getElementById('stageMap');if(m)m.hidden=true}
   async function startCourse(n){if(n>unlockedCourse())return;hideStageMap();await loadBattle(COURSE_START[n])}
@@ -787,7 +787,7 @@ async function enemyShot(epoch){
   window.addEventListener('pagehide',()=>{clearInterval(idleClock);if(poseAnimation)poseAnimation.cancel();});
   window.addEventListener('pageshow',()=>{if(directorReady){clearInterval(idleClock);idleClock=setInterval(idlePose,700);}});
 
-  resize();void document.querySelectorAll('.map-node[data-course]').forEach(b=>b.addEventListener('click',()=>startCourse(Number(b.dataset.course))));
+  document.querySelectorAll('.map-hit[data-course]').forEach(b=>b.addEventListener('click',()=>{if(!b.disabled)startCourse(Number(b.dataset.course))}));
   updateStageMap();
   const opening=document.getElementById('openingScreen'),map=document.getElementById('stageMap');
   if(map)map.hidden=true;
