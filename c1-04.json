@@ -4,7 +4,7 @@
   "name": "越谷ベビードラゴン",
   "stageLabel": "BOSS",
   "course": "COURSE 1 RIVERSIDE",
-  "background": "battle1-1179x2556-v180.webp",
+  "background": "stage1-riverside-1179x2556-v200.webp",
   "texture": "turf.webp",
   "stats": {
     "enemyMax": 6500,

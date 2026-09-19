@@ -713,7 +713,7 @@ async function enemyShot(epoch){
   function courseOf(id){return String(id||'').startsWith('c2-')?2:1}
   function unlockedCourse(){const v=Number(localStorage.getItem('pazugoru-unlocked-course')||1);return Number.isFinite(v)?Math.max(1,Math.min(2,v)):1}
   function markCourseClear(n){localStorage.setItem('pazugoru-course-'+n+'-clear','1');localStorage.setItem('pazugoru-unlocked-course',String(Math.max(unlockedCourse(),n+1)));updateStageMap()}
-  function updateStageMap(){const u=unlockedCourse();for(const n of [1,2,3,4,5]){const b=document.querySelector('.st'+n);if(!b)continue;const playable=n<=2&&n<=u;b.disabled=!playable;b.classList.toggle('cleared',n<u)}}
+  function updateStageMap(){const u=unlockedCourse();for(let n=1;n<=5;n++){const b=document.querySelector('.n'+n);if(!b)continue;b.disabled=!(n<=2&&n<=u)}}
   function showStageMap(){const m=document.getElementById('stageMap');if(!m)return;m.hidden=false;updateStageMap();Audio.stopEffects()}
   function hideStageMap(){const m=document.getElementById('stageMap');if(m)m.hidden=true}
   async function startCourse(n){if(n>unlockedCourse())return;hideStageMap();await loadBattle(COURSE_START[n])}
@@ -787,7 +787,7 @@ async function enemyShot(epoch){
   window.addEventListener('pagehide',()=>{clearInterval(idleClock);if(poseAnimation)poseAnimation.cancel();});
   window.addEventListener('pageshow',()=>{if(directorReady){clearInterval(idleClock);idleClock=setInterval(idlePose,700);}});
 
-  document.querySelectorAll('.stage-ui[data-course]').forEach(b=>b.addEventListener('click',()=>{if(!b.disabled)startCourse(Number(b.dataset.course))}));
+  document.querySelectorAll('.stage-node[data-course]').forEach(b=>b.addEventListener('click',()=>{if(!b.disabled)startCourse(Number(b.dataset.course))}));
   updateStageMap();
   const opening=document.getElementById('openingScreen'),map=document.getElementById('stageMap');
   if(map)map.hidden=true;
