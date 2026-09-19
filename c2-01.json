@@ -4,7 +4,7 @@
   "name": "スナモグ",
   "stageLabel": "STAGE 2-1",
   "course": "COURSE 2 BUNKER",
-  "background": "course2-bunker.webp",
+  "background": "stage2-bunkers-v141.webp",
   "texture": "turf.webp",
   "stats": {
     "enemyMax": 1500,

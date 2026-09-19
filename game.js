@@ -713,7 +713,7 @@ async function enemyShot(epoch){
   function courseOf(id){return String(id||'').startsWith('c2-')?2:1}
   function unlockedCourse(){return Math.max(1,Number(localStorage.getItem('pazugoru-unlocked-course')||1))}
   function markCourseClear(n){localStorage.setItem('pazugoru-course-'+n+'-clear','1');localStorage.setItem('pazugoru-unlocked-course',String(Math.max(unlockedCourse(),n+1)));updateStageMap()}
-  function updateStageMap(){const u=unlockedCourse();for(const n of [1,2]){const b=document.querySelector(`[data-course="${n}"]`);if(!b)continue;b.disabled=n>u;b.classList.toggle('locked',n>u);const s=document.getElementById('stars'+n);if(s)s.textContent=localStorage.getItem('pazugoru-course-'+n+'-clear')==='1'?'★★★':'☆☆☆'}}
+  function updateStageMap(){const u=unlockedCourse();for(const n of [1,2]){const b=document.querySelector(`[data-course="${n}"]`);if(!b)continue;b.disabled=n>u;b.classList.toggle('locked',n>u)}}
   function showStageMap(){const m=document.getElementById('stageMap');if(!m)return;m.hidden=false;updateStageMap();Audio.stopEffects()}
   function hideStageMap(){const m=document.getElementById('stageMap');if(m)m.hidden=true}
   async function startCourse(n){if(n>unlockedCourse())return;hideStageMap();await loadBattle(COURSE_START[n])}
@@ -763,7 +763,7 @@ async function enemyShot(epoch){
     clearInterval(idleClock);clearTimeout(faceTimer);clearTimeout(expressionTimer);directorReady=false;
     if(poseAnimation)poseAnimation.cancel();if(dragonAnimation)dragonAnimation.cancel();
     Audio.stopEffects();ui.effects.replaceChildren();ui.result.hidden=true;ui.help.hidden=true;$('reactionLayer').hidden=true;modalMode(false);
-    setPhase('loading');$('loadLayer').hidden=false;$('loadRetry').hidden=true;setStatus('ステージを読み込んでいます');
+    setPhase('loading');$('loadLayer').hidden=true;$('loadRetry').hidden=true;setStatus('');
     try{
       const catalog=await Assets.getCatalog();id=id||catalog.stages[0].id;
       const s=await Assets.activate(id,(done,total)=>{if(seq===loadSerial){$('loadText').textContent='素材を準備中 '+done+' / '+total;$('loadProgress').value=done/total;}});
