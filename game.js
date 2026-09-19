@@ -707,27 +707,35 @@ async function enemyShot(epoch){
     }else setStatus(`${combo} COMBO · ${damage}ダメージ${actualHeal?' / ＋'+actualHeal+'回復':''}`);
     setPhase('ready');if(combo>=3&&state.turn%currentEnemyEvery()!==0)briefly('angry',650);
   }
+  
+  const COURSE_START={1:'s1-korafu',2:'c2-sunamogu'};
+  const COURSE_BOSS=new Set(['boss-koshigaya','c2-abiko']);
+  function courseOf(id){return String(id||'').startsWith('c2-')?2:1}
+  function unlockedCourse(){return Math.max(1,Number(localStorage.getItem('pazugoru-unlocked-course')||1))}
+  function markCourseClear(n){localStorage.setItem('pazugoru-course-'+n+'-clear','1');localStorage.setItem('pazugoru-unlocked-course',String(Math.max(unlockedCourse(),n+1)));updateStageMap()}
+  function updateStageMap(){const u=unlockedCourse();for(const n of [1,2]){const b=document.querySelector(`[data-course="${n}"]`);if(!b)continue;b.disabled=n>u;b.classList.toggle('locked',n>u);const s=document.getElementById('stars'+n);if(s)s.textContent=localStorage.getItem('pazugoru-course-'+n+'-clear')==='1'?'★★★':'☆☆☆'}}
+  function showStageMap(){const m=document.getElementById('stageMap');if(!m)return;m.hidden=false;updateStageMap();Audio.stopEffects()}
+  function hideStageMap(){const m=document.getElementById('stageMap');if(m)m.hidden=true}
+  async function startCourse(n){if(n>unlockedCourse())return;hideStageMap();await loadBattle(COURSE_START[n])}
   async function finish(win){
     setPhase('ended');clearTimeout(faceTimer);clearTimeout(expressionTimer);
-    const nextId=Assets.nextId();
-    if(win&&nextId){
+    const currentCourse=courseOf(activeStage?.id),nextId=Assets.nextId();
+    if(win&&!COURSE_BOSS.has(activeStage?.id)&&nextId&&courseOf(nextId)===currentCourse){
       ui.result.hidden=true;modalMode(false);
-      try{
-        await Assets.prefetchNext();
-        if((nextId==='boss-koshigaya'||nextId==='c2-abiko'))await bossIntro();
-        await loadBattle(nextId);
-      }catch(e){
-        ui.result.hidden=false;modalMode(true);setStatus('次のステージを読み込めませんでした');
-      }
+      try{await Assets.prefetchNext();if(COURSE_BOSS.has(nextId))await bossIntro();await loadBattle(nextId);}
+      catch(e){ui.result.hidden=false;modalMode(true);setStatus('次のステージを読み込めませんでした');}
       return;
     }
+    if(win&&COURSE_BOSS.has(activeStage?.id))markCourseClear(currentCourse);
     if(!win)setPose('wink');
     ui.result.classList.toggle('win',win);ui.result.hidden=false;modalMode(true);
-    $('resultTitle').textContent=win?'BOSS CLEAR!':'GAME OVER';
-    $('resultMessage').textContent=win?(activeStage.name+'を撃破！'):(activeStage.name+'に負けた！ピンクの回復も狙って、もう一度。');
+    $('resultTitle').textContent=win?'STAGE '+currentCourse+' CLEAR!':'GAME OVER';
+    $('resultMessage').textContent=win?(activeStage.name+'を撃破！'):(activeStage.name+'に負けた！');
     const nsb=$('nextStageButton');if(nsb)nsb.hidden=true;
     $('resultTurns').textContent=`${state.turn} ターン`;$('resultCombo').textContent=`最高 ${state.maxCombo} COMBO`;
-    $('retryButton').focus({preventScroll:true});
+    let mapBtn=$('mapReturnButton');
+    if(!mapBtn){mapBtn=document.createElement('button');mapBtn.id='mapReturnButton';mapBtn.className='map-return';mapBtn.textContent='ステージ選択へ';$('retryButton').parentElement.appendChild(mapBtn);mapBtn.addEventListener('click',()=>{ui.result.hidden=true;modalMode(false);showStageMap()});}
+    mapBtn.hidden=false;$('retryButton').textContent=win?'もう一度あそぶ':'もう一度挑戦';$('retryButton').focus({preventScroll:true});
   }
   async function bossIntro(){
     const layer=$('bossIntro');if(!layer)return;
@@ -779,7 +787,8 @@ async function enemyShot(epoch){
   window.addEventListener('pagehide',()=>{clearInterval(idleClock);if(poseAnimation)poseAnimation.cancel();});
   window.addEventListener('pageshow',()=>{if(directorReady){clearInterval(idleClock);idleClock=setInterval(idlePose,700);}});
 
-  resize();void loadBattle();
+  resize();void document.querySelectorAll('.map-node[data-course]').forEach(b=>b.addEventListener('click',()=>startCourse(Number(b.dataset.course))));
+  updateStageMap();showStageMap();
 
   // Test-only helpers are absent from a normal URL. No server/score writes exist.
   if(new URLSearchParams(location.search).get('test')==='1'){
