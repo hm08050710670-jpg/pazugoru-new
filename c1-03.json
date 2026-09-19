@@ -1,0 +1,308 @@
+{
+  "schema": 1,
+  "id": "s3-rough",
+  "name": "ラフラビット",
+  "stageLabel": "STAGE 3",
+  "course": "COURSE 1 RIVERSIDE",
+  "background": "course1-riverside.webp",
+  "texture": "turf.webp",
+  "stats": {
+    "enemyMax": 2200,
+    "playerMax": 3200,
+    "enemyAttack": 430,
+    "enemyEvery": 2,
+    "attackPerBall": 42,
+    "comboStep": 0.38,
+    "healPerBall": 38,
+    "healComboStep": 0.2
+  },
+  "display": {
+    "frameWidth": 576,
+    "frameHeight": 622,
+    "groundY": 622,
+    "inkBounds": [
+      0,
+      0,
+      576,
+      622
+    ],
+    "motionBounds": [
+      0,
+      0,
+      576,
+      622
+    ],
+    "visibleHeight": 205,
+    "baseline": 622,
+    "width": 205,
+    "height": 205
+  },
+  "element": "rough",
+  "poses": {
+    "normal": {
+      "label": "通常待機",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        96,
+        94,
+        416,
+        448
+      ]
+    },
+    "happy": {
+      "label": "待機・ゆらゆら",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        76,
+        163,
+        436,
+        448
+      ]
+    },
+    "curious": {
+      "label": "周りを見る",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        96,
+        94,
+        416,
+        448
+      ]
+    },
+    "sleepy": {
+      "label": "うとうと",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        96,
+        94,
+        416,
+        448
+      ]
+    },
+    "alert": {
+      "label": "警戒",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        74,
+        138,
+        438,
+        448
+      ]
+    },
+    "hurt1": {
+      "label": "被弾・弱",
+      "kind": "hit",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        107,
+        218,
+        405,
+        448
+      ]
+    },
+    "hurt2": {
+      "label": "被弾・中",
+      "kind": "hit",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        107,
+        218,
+        405,
+        448
+      ]
+    },
+    "hurt3": {
+      "label": "被弾・強",
+      "kind": "hit",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        107,
+        218,
+        405,
+        448
+      ]
+    },
+    "attack": {
+      "label": "通常攻撃",
+      "kind": "attack",
+      "detail": "全身の本体画像を使い、動きとゲーム内エフェクトで攻撃します。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        74,
+        138,
+        438,
+        448
+      ]
+    },
+    "strong": {
+      "label": "強攻撃",
+      "kind": "attack",
+      "detail": "全身の本体画像を使い、動きとゲーム内エフェクトで攻撃します。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        74,
+        138,
+        438,
+        448
+      ]
+    },
+    "special": {
+      "label": "必殺技",
+      "kind": "attack",
+      "detail": "全身の本体画像を使い、動きとゲーム内エフェクトで攻撃します。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        74,
+        138,
+        438,
+        448
+      ]
+    },
+    "defeated": {
+      "label": "撃破",
+      "kind": "ko",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        92,
+        288,
+        420,
+        448
+      ]
+    },
+    "smile": {
+      "label": "ゆらゆら",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        76,
+        163,
+        436,
+        448
+      ]
+    },
+    "angry": {
+      "label": "気合い",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        96,
+        94,
+        416,
+        448
+      ]
+    },
+    "cry": {
+      "label": "ひるむ",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        107,
+        218,
+        405,
+        448
+      ]
+    },
+    "surprised": {
+      "label": "気づく",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        96,
+        94,
+        416,
+        448
+      ]
+    },
+    "worried": {
+      "label": "弱る",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        107,
+        218,
+        405,
+        448
+      ]
+    },
+    "stare": {
+      "label": "見つめる",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        96,
+        94,
+        416,
+        448
+      ]
+    },
+    "wink": {
+      "label": "ひと息",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        76,
+        163,
+        436,
+        448
+      ]
+    },
+    "grumpy": {
+      "label": "様子を見る",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-rough-rabbit.png",
+      "inkBounds": [
+        96,
+        94,
+        416,
+        448
+      ]
+    }
+  },
+  "notes": [
+    "派手な炎球・砂弾を含む旧画像は読み込まない。",
+    "弱・中・強の被弾は同じ完全な被弾画像と移動量で表現。",
+    "入力・HP・4戦闘進行・音量の値は元の版を維持。"
+  ]
+}

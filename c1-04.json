@@ -1,0 +1,324 @@
+{
+  "schema": 1,
+  "id": "boss-koshigaya",
+  "name": "越谷ベビードラゴン",
+  "stageLabel": "BOSS",
+  "course": "COURSE 1 RIVERSIDE",
+  "background": "course1-riverside.webp",
+  "texture": "turf.webp",
+  "stats": {
+    "enemyMax": 6500,
+    "playerMax": 3200,
+    "enemyAttack": 550,
+    "enemyEvery": 2,
+    "attackPerBall": 42,
+    "comboStep": 0.38,
+    "healPerBall": 38,
+    "healComboStep": 0.2
+  },
+  "display": {
+    "frameWidth": 672,
+    "frameHeight": 638,
+    "groundY": 638,
+    "inkBounds": [
+      0,
+      0,
+      672,
+      638
+    ],
+    "motionBounds": [
+      0,
+      0,
+      672,
+      638
+    ],
+    "visibleHeight": 225,
+    "baseline": 638,
+    "width": 225,
+    "height": 225
+  },
+  "element": "fire",
+  "poses": {
+    "normal": {
+      "label": "通常待機",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "happy": {
+      "label": "待機・ゆらゆら",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "curious": {
+      "label": "周りを見る",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "sleepy": {
+      "label": "うとうと",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "alert": {
+      "label": "警戒",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "hurt1": {
+      "label": "被弾・弱",
+      "kind": "hit",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        113,
+        201,
+        399,
+        448
+      ]
+    },
+    "hurt2": {
+      "label": "被弾・中",
+      "kind": "hit",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        113,
+        201,
+        399,
+        448
+      ]
+    },
+    "hurt3": {
+      "label": "被弾・強",
+      "kind": "hit",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        113,
+        201,
+        399,
+        448
+      ]
+    },
+    "attack": {
+      "label": "通常攻撃",
+      "kind": "attack",
+      "detail": "全身の本体画像を使い、動きとゲーム内エフェクトで攻撃します。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "strong": {
+      "label": "強攻撃",
+      "kind": "attack",
+      "detail": "全身の本体画像を使い、動きとゲーム内エフェクトで攻撃します。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "special": {
+      "label": "必殺技",
+      "kind": "attack",
+      "detail": "全身の本体画像を使い、動きとゲーム内エフェクトで攻撃します。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "defeated": {
+      "label": "撃破",
+      "kind": "ko",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        74,
+        228,
+        438,
+        448
+      ]
+    },
+    "smile": {
+      "label": "ゆらゆら",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "angry": {
+      "label": "気合い",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "cry": {
+      "label": "ひるむ",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        113,
+        201,
+        399,
+        448
+      ]
+    },
+    "surprised": {
+      "label": "気づく",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "worried": {
+      "label": "弱る",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        113,
+        201,
+        399,
+        448
+      ]
+    },
+    "stare": {
+      "label": "見つめる",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "wink": {
+      "label": "ひと息",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    },
+    "grumpy": {
+      "label": "様子を見る",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-koshigaya-dragon.png",
+      "inkBounds": [
+        78,
+        120,
+        433,
+        448
+      ]
+    }
+  },
+  "bossPhases": {
+    "phase2": {
+      "hpRatio": 0.5,
+      "enemyEvery": 1,
+      "label": "猛攻モード"
+    },
+    "rage": {
+      "hpRatio": 0.25,
+      "enemyEvery": 1,
+      "label": "怒りモード",
+      "healMultiplier": 0.5
+    }
+  },
+  "notes": [
+    "派手な炎球・砂弾を含む旧画像は読み込まない。",
+    "弱・中・強の被弾は同じ完全な被弾画像と移動量で表現。",
+    "入力・HP・4戦闘進行・音量の値は元の版を維持。",
+    "HP50%以下で毎ターン攻撃",
+    "HP25%以下で怒りモード",
+    "怒りモード中はピンク回復量50%"
+  ]
+}

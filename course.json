@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "version": "1.01-IPHONE-FLAT",
+  "name": "パズゴル",
+  "stages": [
+    {
+      "id": "s1-korafu",
+      "manifest": "c1-01.json"
+    },
+    {
+      "id": "s2-bunker",
+      "manifest": "c1-02.json"
+    },
+    {
+      "id": "s3-rough",
+      "manifest": "c1-03.json"
+    },
+    {
+      "id": "boss-koshigaya",
+      "manifest": "c1-04.json"
+    },
+    {
+      "id": "c2-sunamogu",
+      "manifest": "c2-01.json"
+    },
+    {
+      "id": "c2-bankani",
+      "manifest": "c2-02.json"
+    },
+    {
+      "id": "c2-oobankani",
+      "manifest": "c2-03.json"
+    },
+    {
+      "id": "c2-abiko",
+      "manifest": "c2-04.json"
+    }
+  ]
+}

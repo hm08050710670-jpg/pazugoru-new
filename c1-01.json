@@ -1,0 +1,309 @@
+{
+  "schema": 1,
+  "id": "s1-korafu",
+  "name": "コラフ",
+  "stageLabel": "STAGE 1",
+  "course": "COURSE 1 RIVERSIDE",
+  "background": "course1-riverside.webp",
+  "texture": "turf.webp",
+  "stats": {
+    "enemyMax": 1200,
+    "playerMax": 3200,
+    "enemyAttack": 260,
+    "enemyEvery": 2,
+    "attackPerBall": 42,
+    "comboStep": 0.38,
+    "healPerBall": 38,
+    "healComboStep": 0.2
+  },
+  "display": {
+    "frameWidth": 504,
+    "frameHeight": 478,
+    "groundY": 478,
+    "inkBounds": [
+      0,
+      0,
+      504,
+      478
+    ],
+    "motionBounds": [
+      0,
+      0,
+      504,
+      478
+    ],
+    "visibleHeight": 170,
+    "baseline": 478,
+    "width": 170,
+    "height": 170
+  },
+  "poses": {
+    "normal": {
+      "label": "通常待機",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        75,
+        131,
+        436,
+        448
+      ]
+    },
+    "happy": {
+      "label": "待機・ゆらゆら",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        92,
+        199,
+        420,
+        448
+      ]
+    },
+    "curious": {
+      "label": "周りを見る",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        75,
+        131,
+        436,
+        448
+      ]
+    },
+    "sleepy": {
+      "label": "うとうと",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        75,
+        131,
+        436,
+        448
+      ]
+    },
+    "alert": {
+      "label": "警戒",
+      "kind": "idle",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        103,
+        168,
+        408,
+        448
+      ]
+    },
+    "hurt1": {
+      "label": "被弾・弱",
+      "kind": "hit",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        128,
+        187,
+        384,
+        448
+      ]
+    },
+    "hurt2": {
+      "label": "被弾・中",
+      "kind": "hit",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        128,
+        187,
+        384,
+        448
+      ]
+    },
+    "hurt3": {
+      "label": "被弾・強",
+      "kind": "hit",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        128,
+        187,
+        384,
+        448
+      ]
+    },
+    "attack": {
+      "label": "通常攻撃",
+      "kind": "attack",
+      "detail": "全身の本体画像を使い、動きとゲーム内エフェクトで攻撃します。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        103,
+        168,
+        408,
+        448
+      ]
+    },
+    "strong": {
+      "label": "強攻撃",
+      "kind": "attack",
+      "detail": "全身の本体画像を使い、動きとゲーム内エフェクトで攻撃します。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        103,
+        168,
+        408,
+        448
+      ]
+    },
+    "special": {
+      "label": "必殺技",
+      "kind": "attack",
+      "detail": "全身の本体画像を使い、動きとゲーム内エフェクトで攻撃します。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        103,
+        168,
+        408,
+        448
+      ]
+    },
+    "defeated": {
+      "label": "撃破",
+      "kind": "ko",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        92,
+        270,
+        420,
+        448
+      ]
+    },
+    "smile": {
+      "label": "ゆらゆら",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        92,
+        199,
+        420,
+        448
+      ]
+    },
+    "angry": {
+      "label": "気合い",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        75,
+        131,
+        436,
+        448
+      ]
+    },
+    "cry": {
+      "label": "ひるむ",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        128,
+        187,
+        384,
+        448
+      ]
+    },
+    "surprised": {
+      "label": "気づく",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        75,
+        131,
+        436,
+        448
+      ]
+    },
+    "worried": {
+      "label": "弱る",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        128,
+        187,
+        384,
+        448
+      ]
+    },
+    "stare": {
+      "label": "見つめる",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        75,
+        131,
+        436,
+        448
+      ]
+    },
+    "wink": {
+      "label": "ひと息",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        92,
+        199,
+        420,
+        448
+      ]
+    },
+    "grumpy": {
+      "label": "様子を見る",
+      "kind": "emotion",
+      "detail": "全身を保った画像に、状態に合わせた動きを組み合わせます。",
+      "note": "FRESH100: 1モンスター1枚方式。",
+      "src": "c1-korafu.png",
+      "inkBounds": [
+        75,
+        131,
+        436,
+        448
+      ]
+    }
+  },
+  "notes": [
+    "派手な炎球・砂弾を含む旧画像は読み込まない。",
+    "弱・中・強の被弾は同じ完全な被弾画像と移動量で表現。",
+    "入力・HP・4戦闘進行・音量の値は元の版を維持。",
+    "この版はコラフ戦のみ。次の戦闘は素材完成後にcourse.jsonへ追加。"
+  ],
+  "element": "grass"
+}
