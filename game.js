@@ -713,7 +713,7 @@ async function enemyShot(epoch){
   function courseOf(id){return String(id||'').startsWith('c2-')?2:1}
   function unlockedCourse(){const v=Number(localStorage.getItem('pazugoru-unlocked-course')||1);return Number.isFinite(v)?Math.max(1,Math.min(2,v)):1}
   function markCourseClear(n){localStorage.setItem('pazugoru-course-'+n+'-clear','1');localStorage.setItem('pazugoru-unlocked-course',String(Math.max(unlockedCourse(),n+1)));updateStageMap()}
-  function updateStageMap(){const u=unlockedCourse();const b1=document.querySelector('.map-hit-1'),b2=document.querySelector('.map-hit-2');if(b1){b1.disabled=false;b1.classList.remove('locked')}if(b2){b2.disabled=u<2;b2.classList.toggle('locked',u<2)}}
+  function updateStageMap(){const u=unlockedCourse();for(const n of [1,2,3,4,5]){const b=document.querySelector('.st'+n);if(!b)continue;const playable=n<=2&&n<=u;b.disabled=!playable;b.classList.toggle('cleared',n<u)}}
   function showStageMap(){const m=document.getElementById('stageMap');if(!m)return;m.hidden=false;updateStageMap();Audio.stopEffects()}
   function hideStageMap(){const m=document.getElementById('stageMap');if(m)m.hidden=true}
   async function startCourse(n){if(n>unlockedCourse())return;hideStageMap();await loadBattle(COURSE_START[n])}
@@ -763,7 +763,7 @@ async function enemyShot(epoch){
     clearInterval(idleClock);clearTimeout(faceTimer);clearTimeout(expressionTimer);directorReady=false;
     if(poseAnimation)poseAnimation.cancel();if(dragonAnimation)dragonAnimation.cancel();
     Audio.stopEffects();ui.effects.replaceChildren();ui.result.hidden=true;ui.help.hidden=true;$('reactionLayer').hidden=true;modalMode(false);
-    setPhase('loading');$('loadLayer').hidden=true;$('loadRetry').hidden=true;setStatus('');
+    setPhase('loading');$('loadLayer').hidden=true;$('loadRetry').hidden=true;setStatus('');if(ui.enemy)ui.enemy.style.visibility='hidden';
     try{
       const catalog=await Assets.getCatalog();id=id||catalog.stages[0].id;
       const s=await Assets.activate(id,(done,total)=>{if(seq===loadSerial){$('loadText').textContent='素材を準備中 '+done+' / '+total;$('loadProgress').value=done/total;}});
@@ -774,7 +774,7 @@ async function enemyShot(epoch){
       $('stageLabel').textContent=s.stageLabel;$('enemyName').textContent=s.name;
       ui.enemyBar.setAttribute('aria-label',s.name+'のHP');spriteImage.src=POSES.normal.src;
       spriteImage.width=s.display.frameWidth;spriteImage.height=s.display.frameHeight;
-      directorReady=true;resize();resetGame();$('loadLayer').hidden=true;
+      directorReady=true;resize();resetGame();$('loadLayer').hidden=true;if(ui.enemy)ui.enemy.style.visibility='visible';
       // Do not download future characters at initial boot. A ready stage can be
       // prefetched just before an actual transition using Assets.prefetchNext().
     }catch(err){
@@ -787,7 +787,7 @@ async function enemyShot(epoch){
   window.addEventListener('pagehide',()=>{clearInterval(idleClock);if(poseAnimation)poseAnimation.cancel();});
   window.addEventListener('pageshow',()=>{if(directorReady){clearInterval(idleClock);idleClock=setInterval(idlePose,700);}});
 
-  document.querySelectorAll('.map-hit[data-course]').forEach(b=>b.addEventListener('click',()=>{if(!b.disabled)startCourse(Number(b.dataset.course))}));
+  document.querySelectorAll('.stage-ui[data-course]').forEach(b=>b.addEventListener('click',()=>{if(!b.disabled)startCourse(Number(b.dataset.course))}));
   updateStageMap();
   const opening=document.getElementById('openingScreen'),map=document.getElementById('stageMap');
   if(map)map.hidden=true;

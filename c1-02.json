@@ -4,7 +4,7 @@
   "name": "バンカービートル",
   "stageLabel": "STAGE 2",
   "course": "COURSE 1 RIVERSIDE",
-  "background": "course1-riverside.webp",
+  "background": "battle1-1179x2556-v180.webp",
   "texture": "turf.webp",
   "stats": {
     "enemyMax": 1600,

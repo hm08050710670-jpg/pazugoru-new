@@ -4,7 +4,7 @@
   "name": "我孫子サンドドラゴン",
   "stageLabel": "BOSS",
   "course": "COURSE 2 BUNKER",
-  "background": "stage2-bunkers-v141.webp",
+  "background": "battle2-1179x2556-v180.webp",
   "texture": "turf.webp",
   "stats": {
     "enemyMax": 7200,
