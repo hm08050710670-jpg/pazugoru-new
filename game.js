@@ -788,7 +788,11 @@ async function enemyShot(epoch){
   window.addEventListener('pageshow',()=>{if(directorReady){clearInterval(idleClock);idleClock=setInterval(idlePose,700);}});
 
   resize();void document.querySelectorAll('.map-node[data-course]').forEach(b=>b.addEventListener('click',()=>startCourse(Number(b.dataset.course))));
-  updateStageMap();showStageMap();
+  updateStageMap();
+  const opening=document.getElementById('openingScreen'),map=document.getElementById('stageMap');
+  if(map)map.hidden=true;
+  const startButton=document.getElementById('gameStartButton');
+  if(startButton)startButton.addEventListener('click',async()=>{try{await Audio.unlock();}catch(e){} try{Audio.start();}catch(e){} opening.hidden=true;showStageMap();});
 
   // Test-only helpers are absent from a normal URL. No server/score writes exist.
   if(new URLSearchParams(location.search).get('test')==='1'){
